@@ -11,15 +11,16 @@ app.get('/', function(req, res){
 io.on('connection', function(socket){
   console.log("New client!");
 
-  socket.on('login', function(msg){
-    console.log("User logged as: " + msg);
+  socket.on('login', function(user){
+    console.log("User logged as: " + user);
+    socket.user = user;
   });
   socket.on('disconnect', function(){
-    io.emit('message', 'SERVER', '')
+    io.emit('message', "client " + socket.user + " disconnected" , 'SERVER');
   });
-  socket.on('message', function(msg, user){
-    console.log(user + ": " + msg);
-    io.emit('message', msg, user);
+  socket.on('message', function(msg){
+    console.log(socket.user + ": " + msg);
+    io.emit('message', msg, socket.user);
   });
 });
 
