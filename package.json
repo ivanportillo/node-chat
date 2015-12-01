@@ -1,0 +1,24 @@
+{
+  "name": "node-chat",
+  "version": "1.0.0",
+  "description": "An example of creation of a chat in NodeJS, socket.io and ExpressJS",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ivanportillo/node-chat.git"
+  },
+  "author": "Iván Portillo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ivanportillo/node-chat/issues"
+  },
+  "homepage": "https://github.com/ivanportillo/node-chat",
+  "dependencies": {
+    "express": "^4.13.3",
+    "socket.io": "^1.3.7"
+  }
+}
