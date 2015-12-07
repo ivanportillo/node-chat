@@ -10,6 +10,7 @@ app.get('/', function(req, res){
 //SOCKETIO
 io.on('connection', function(socket){
   console.log("New client!");
+  console.log(socket);
 
   socket.on('login', function(user){
     console.log("User logged as: " + user);

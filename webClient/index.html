@@ -25,13 +25,13 @@
     socket.emit('login', user);
 
     $('form').submit(function(){
-      socket.emit('message', $('#message').val(), user);
+      socket.emit('message', $('#message').val());
       $('#message').val('');
       return false;
     });
 
     socket.on('message', function(msg, user){
-      $('#box').append("<p><strong>"+ user + "</strong>: " + msg);
+      $('#box').append("<p><strong>"+ user + "</strong>: " + msg + "</p>");
     });
 
   </script>
